@@ -16,6 +16,7 @@
 
 	<target name="clean">
 		<delete dir="bin" />
+		<delete dir="lib" />
 	</target>
 
 	<target name="compile">
@@ -36,14 +37,21 @@
 	<target name="jar">
 		<mkdir dir="lib" />
 		<jar destfile="lib/hello.jar" update="true">
-			<fileset dir="bin/hello">
-				<include name="*.class" />
+			<fileset dir="bin/">
+				<include name="hello/*.class" />
 			</fileset>
+			<manifest>
+				<attribute name="Main-Class" value="hello.Hello" />
+			</manifest>
 		</jar>
 	</target>
 
+	<target name="run">
+		<java jar="lib/hello.jar" fork="true" />
+	</target>
 
-	<target name="default" description="description" depends="startup, clean, compile, jar">
+
+	<target name="default" description="description" depends="startup, clean, compile, jar, run">
 		<echo>------------------------------------------------------------------------------</echo>
 		<echo>End of processing</echo>
 		<echo>------------------------------------------------------------------------------</echo>

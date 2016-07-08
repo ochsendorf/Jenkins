@@ -4,14 +4,25 @@
 
 clean:
    [delete] Deleting directory /home/thiago/workspace/JenkinsProject1/bin
+   [delete] Deleting directory /home/thiago/workspace/JenkinsProject1/lib
 
 compile:
      [echo]  starting to compile projects 
     [mkdir] Created dir: /home/thiago/workspace/JenkinsProject1/bin
     [javac] Compiling 2 source files to /home/thiago/workspace/JenkinsProject1/bin
-     [echo]  finished to compile projects 
+     [echo] ------------------------------------------------------------------------------
+     [echo] finished to compile projects 
+     [echo] ------------------------------------------------------------------------------
+
+jar:
+    [mkdir] Created dir: /home/thiago/workspace/JenkinsProject1/lib
+      [jar] Building jar: /home/thiago/workspace/JenkinsProject1/lib/hello.jar
+
+run:
+     [java] hello there world
+     [java] hello there world again
 
 default:
      [echo] ------------------------------------------------------------------------------
-     [echo] End of processing.
+     [echo] End of processing
      [echo] ------------------------------------------------------------------------------
