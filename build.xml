@@ -28,11 +28,13 @@
 			</classpath>
 			<src path="src" />
 		</javac>
-		<echo> finished to compile projects </echo>
+		<echo>------------------------------------------------------------------------------</echo>
+		<echo>finished to compile projects </echo>
+		<echo>------------------------------------------------------------------------------</echo>
 	</target>
 
 	<target name="jar">
-		<mkdir dir="lib"/>
+		<mkdir dir="lib" />
 		<jar destfile="lib/hello.jar" update="true">
 			<fileset dir="bin/hello">
 				<include name="*.class" />
@@ -43,7 +45,7 @@
 
 	<target name="default" description="description" depends="startup, clean, compile, jar">
 		<echo>------------------------------------------------------------------------------</echo>
-		<echo>End of processing.</echo>
+		<echo>End of processing</echo>
 		<echo>------------------------------------------------------------------------------</echo>
 		<record name="error.log" action="stop" />
 	</target>
