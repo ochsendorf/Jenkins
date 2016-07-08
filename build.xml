@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="ant" default="default">
+	<description>
+        ant script for testing Jenkins
+		created using ant 1.9.3.
+		July 07 2016.
+    </description>
+
+	<target name="startup">
+		<record name="error.log" action="start" append="false" />
+		<echo>------------------------------------------------------------------------------</echo>
+		<echo>starting ant build </echo>
+		<echo>------------------------------------------------------------------------------</echo>
+	</target>
+
+	<target name="clean">
+		<delete dir="bin" />
+	</target>
+
+	<target name="compile">
+		<echo> starting to compile projects </echo>
+		<mkdir dir="bin" />
+
+		<javac destdir="bin/" includeantruntime="true" nowarn="on">
+			<classpath>
+				<path id="org.junit" location="/home/thiago/eclipse/plugins/org.junit_4.12.0.v201504281640/junit.jar" />
+			</classpath>
+			<src path="src" />
+		</javac>
+		<echo> finished to compile projects </echo>
+	</target>
+
+	<target name="default" description="description" depends="startup, clean, compile">
+		<echo>------------------------------------------------------------------------------</echo>
+		<echo>End of processing.</echo>
+		<echo>------------------------------------------------------------------------------</echo>
+		<record name="error.log" action="stop" />
+	</target>
+
+</project>

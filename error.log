@@ -1,0 +1,17 @@
+     [echo] ------------------------------------------------------------------------------
+     [echo] starting ant build 
+     [echo] ------------------------------------------------------------------------------
+
+clean:
+   [delete] Deleting directory /home/thiago/workspace/JenkinsProject1/bin
+
+compile:
+     [echo]  starting to compile projects 
+    [mkdir] Created dir: /home/thiago/workspace/JenkinsProject1/bin
+    [javac] Compiling 2 source files to /home/thiago/workspace/JenkinsProject1/bin
+     [echo]  finished to compile projects 
+
+default:
+     [echo] ------------------------------------------------------------------------------
+     [echo] End of processing.
+     [echo] ------------------------------------------------------------------------------
