@@ -3,7 +3,7 @@
 <project name="ant" default="default">
 	<description>
         ant script for testing Jenkins
-		created using ant 1.9.3.
+		created using ant 1.9.7
 		July 07 2016.
     </description>
 
