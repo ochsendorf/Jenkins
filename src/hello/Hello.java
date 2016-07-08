@@ -5,7 +5,7 @@ public class Hello {
 	public static void main(String[] args) {
 
 		System.out.println("hello there world");
-
+		System.out.println("hello there world again");
 	}
 
 	// force to success
