@@ -31,7 +31,17 @@
 		<echo> finished to compile projects </echo>
 	</target>
 
-	<target name="default" description="description" depends="startup, clean, compile">
+	<target name="jar">
+		<mkdir dir="lib"/>
+		<jar destfile="lib/hello.jar" update="true">
+			<fileset dir="bin/hello">
+				<include name="*.class" />
+			</fileset>
+		</jar>
+	</target>
+
+
+	<target name="default" description="description" depends="startup, clean, compile, jar">
 		<echo>------------------------------------------------------------------------------</echo>
 		<echo>End of processing.</echo>
 		<echo>------------------------------------------------------------------------------</echo>
